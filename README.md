@@ -5,6 +5,10 @@
 
 A [Zodiac](https://github.com/brettatoms/zodiac) extension for adding secure HTTP headers to your application.
 
+
+> [!WARNING]
+> If you add this extension to an existing project it will very likely break a lot of things.  In particular the default [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP) policy added by zodiac-headers could prevent Javascript from running, images from loading, etc.  For most sites you'll want to add a custom CSP policy.
+
 ## Installation
 
 ```clojure

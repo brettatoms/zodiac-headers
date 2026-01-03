@@ -1,0 +1,18 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.4"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}
+                               nubank/matcher-combinators {:mvn/version "3.9.2"}
+                               com.github.brettatoms/zodiac {:mvn/version "0.8.89"}
+                               peridot/peridot {:mvn/version "0.5.4"}}
+                  :main-opts ["-m" "kaocha.runner"]}
+
+           :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.11"}
+                          slipset/deps-deploy {:mvn/version "0.2.2"}}
+                   :ns-default build}
+
+           :clj-kondo {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2025.10.23"}}
+                       :main-opts ["-m" "clj-kondo.main"]}
+
+           :cljfmt {:extra-deps {dev.weavejester/cljfmt {:mvn/version "0.15.6"}}
+                    :main-opts ["-m" "cljfmt.main"]}}}
